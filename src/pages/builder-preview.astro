@@ -1,14 +1,17 @@
 ---
 const builderAPIpublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
+import Header from '../components/Header.astro';
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <html lang="en">
-  <head>
-    <title>Preview for builder.io</title>
+  <head>  
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <header>This is your header</header>
+    <Header>This is your header</Header>
 
     <builder-component model={builderModel} api-key={builderAPIpublicKey}
     ></builder-component>
