@@ -8,6 +8,9 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://example.com',
-    integrations: [mdx(), sitemap(), tailwind()],
+  site: 'https://example.com',
+  integrations: [mdx(), sitemap(), tailwind()],
+  vite: {
+    envPrefix: 'BUILDER_', // Now you can use BUILDER_API_PUBLIC_KEY directly
+  },
 });
